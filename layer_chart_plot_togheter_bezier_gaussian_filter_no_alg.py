@@ -8,6 +8,7 @@ from scipy.ndimage import gaussian_filter1d
 import numpy as np
 import json
 from scipy import optimize
+import math
 
 def test_func(x, a, b):
     return a * np.sin(b * x)
@@ -46,6 +47,11 @@ def logHasLayer(logId, layer):
         return True
     return False
 
+def fixTimestamp(timestamp):
+    if (timestamp % 10 != 0):
+        return math.floor(timestamp / 10) * 10
+    return timestamp
+
 def drawLine(layer, peerClassifcations, log_index=-1):
     highest_y = 0
     for peerClassifcation in peerClassifcations:
@@ -59,7 +65,7 @@ def drawLine(layer, peerClassifcations, log_index=-1):
                     for el in datapoints:
                         if el["timestamp"] > 1600:
                             continue
-                        tuple_arr.append((el["timestamp"], el["nodeCount"]))
+                        tuple_arr.append((fixTimestamp(el["timestamp"]), el["nodeCount"]))
         else:
             if not logHasLayer(log_index, layer):
                 return
@@ -67,7 +73,7 @@ def drawLine(layer, peerClassifcations, log_index=-1):
             for el in datapoints:
                 if el["timestamp"] > 1600:
                     continue
-                tuple_arr.append((el["timestamp"], el["nodeCount"]))
+                tuple_arr.append((fixTimestamp(el["timestamp"]), el["nodeCount"]))
 
         if(len(tuple_arr) == 0):
             continue

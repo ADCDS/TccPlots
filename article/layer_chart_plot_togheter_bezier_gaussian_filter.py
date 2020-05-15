@@ -7,6 +7,7 @@ import np
 from scipy.ndimage import gaussian_filter1d
 import numpy as np
 import json
+import math
 
 Path = mpath.Path
 classes = ["Freerider", "Cold", "Warm", "Hot"]
@@ -36,6 +37,11 @@ def create_dir(dirName):
 def sortFirst(val):
     return val[0]
 
+def fixTimestamp(timestamp):
+    if (timestamp % 10 != 0):
+        return math.floor(timestamp / 10) * 10
+    return timestamp
+
 def drawLine(layer, peerClassifcations, log_index=-1):
     highest_y = 0
     for peerClassifcation in peerClassifcations:
@@ -49,13 +55,13 @@ def drawLine(layer, peerClassifcations, log_index=-1):
                     for el in datapoints:
                         if el["timestamp"] > 1600:
                             continue
-                        tuple_arr.append((el["timestamp"], el["nodeCount"]))
+                        tuple_arr.append((fixTimestamp(el["timestamp"]), el["nodeCount"]))
         else:
             datapoints = parsed_logs[log_index][layer][peerClassifcation]
             for el in datapoints:
                 if el["timestamp"] > 1600:
                     continue
-                tuple_arr.append((el["timestamp"], el["nodeCount"]))
+                tuple_arr.append((fixTimestamp(el["timestamp"]), el["nodeCount"]))
 
         if(len(tuple_arr) == 0):
             continue
@@ -63,7 +69,8 @@ def drawLine(layer, peerClassifcations, log_index=-1):
         tuple_arr.sort(key=sortFirst)
         x,y = zip(*tuple_arr)
         x = np.asarray(x)
-        y = np.asarray(gaussian_filter1d(y, 3))
+        y_orig = np.asarray(y)
+        y = np.asarray(gaussian_filter1d(y_orig, 7))
 
         if (x.size == 0 or y.size == 0 or int(x.max()) == 0 or int(y.max()) == 0):
             continue
@@ -78,12 +85,13 @@ def drawLine(layer, peerClassifcations, log_index=-1):
             codes.append(Path.CURVE4)
         codes[len(codes) - 1] = Path.STOP
 
-        path = Path(verts, codes)
-        patch = mpatches.PathPatch(path, facecolor='none', lw=2)
+        # path = Path(verts, codes)
+        # patch = mpatches.PathPatch(path, facecolor='none', lw=2)
         # ax.add_patch(patch)
         # ax.plot(x, y, 'x', lw=1, color=classesColors[peerClassifcation])
         print(classesColors[peerClassifcation])
         # ax.plot([0.75], [0.25], "ro")
+        ax.scatter(x, y_orig, color=classesColors[peerClassifcation], s=1)
         ax.plot(x, y, color=classesColors[peerClassifcation], label=peerClassifcation)
         ax.set_ylim(bottom=0, top=highest_y * 1.1)
         ax.set_xlim(right=1600)

@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e90e532f-bf0c-4b2a-87ea-d5661ac1d7eb" name="Default Changelist" comment="" />
+    <list default="true" id="e90e532f-bf0c-4b2a-87ea-d5661ac1d7eb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/layer_chart_plot_togheter_linear_regression.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layer_chart_plot_togheter_svm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/layer_chart_plot_togheter_bezier_gaussian_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/article/layer_chart_plot_togheter_bezier_gaussian_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/layer_chart_plot_togheter_bezier_gaussian_filter_no_alg.py" beforeDir="false" afterPath="$PROJECT_DIR$/article/layer_chart_plot_togheter_bezier_gaussian_filter_no_alg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/article/output/2pc/together_gaussian/layer_8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/output/2pc/together_gaussian/unconnected_nodes.png" beforeDir="false" afterPath="$PROJECT_DIR$/article/output/2pc/together_gaussian/unconnected_nodes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/2pc/layer.pp.output.2.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/2pc/layer.pp.output.2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/2pc/layer.pp.output.3.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/2pc/layer.pp.output.3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/2pc/layer.pp.output.4.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/2pc/layer.pp.output.4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/2pc/layer.pp.output.5.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/2pc/layer.pp.output.5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/2pc/layer.pp.output.6.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/2pc/layer.pp.output.6.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/2pc/layer.pp.output.7.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/2pc/layer.pp.output.7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/2pc/layer.pp.output.8.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/2pc/layer.pp.output.8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/2pc/layer.pp.output.9.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/2pc/layer.pp.output.9.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layer_chart_plot_togheter_bezier_gaussian_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/layer_chart_plot_togheter_bezier_gaussian_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layer_chart_plot_togheter_bezier_gaussian_filter_no_alg.py" beforeDir="false" afterPath="$PROJECT_DIR$/layer_chart_plot_togheter_bezier_gaussian_filter_no_alg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_10.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_9.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/2pc/together_gaussian/layer_9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2pc/together_gaussian/unconnected_nodes.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/2pc/together_gaussian/unconnected_nodes.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +50,18 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Turox\PycharmProjects\TccPlots\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1ZGilwR8txjB75EulmED9kvzfFl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -35,8 +82,8 @@
       <recent name="C:\Users\Turox\PycharmProjects\TccPlots" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.layer_chart_plot_togheter_bezier_gaussian_filter">
-    <configuration name="fizzbuzz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.layer_chart_plot_togheter_svm">
+    <configuration name="layer_chart_plot_togheter_bezier_gaussian_filter (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TccPlots" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -44,12 +91,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/article" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fizzbuzz.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/article/layer_chart_plot_togheter_bezier_gaussian_filter.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -80,7 +127,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="layer_chart_plot_togheter_bezier_gaussian_filter_no_alg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="layer_chart_plot_togheter_linear_regression" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TccPlots" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -93,7 +140,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/layer_chart_plot_togheter_bezier_gaussian_filter_no_alg.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/layer_chart_plot_togheter_linear_regression.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -102,7 +149,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="per_classification_chart" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="layer_chart_plot_togheter_svm (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TccPlots" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -110,12 +157,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/article" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/per_classification_chart.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/article/layer_chart_plot_togheter_svm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -124,7 +171,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="per_classification_chart_same_color" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="layer_chart_plot_togheter_svm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TccPlots" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -137,7 +184,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/per_classification_chart_same_color.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/layer_chart_plot_togheter_svm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.layer_chart_plot_togheter_svm" />
+        <item itemvalue="Python.layer_chart_plot_togheter_svm (1)" />
+        <item itemvalue="Python.layer_chart_plot_togheter_bezier_gaussian_filter (1)" />
+        <item itemvalue="Python.layer_chart_plot_togheter_linear_regression" />
         <item itemvalue="Python.layer_chart_plot_togheter_bezier_gaussian_filter" />
-        <item itemvalue="Python.layer_chart_plot_togheter_bezier_gaussian_filter_no_alg" />
-        <item itemvalue="Python.per_classification_chart" />
-        <item itemvalue="Python.per_classification_chart_same_color" />
-        <item itemvalue="Python.fizzbuzz" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +227,7 @@
       <workItem from="1586965646274" duration="10687000" />
       <workItem from="1588826328486" duration="1002000" />
       <workItem from="1589319951015" duration="612000" />
-      <workItem from="1589551461953" duration="583000" />
+      <workItem from="1589551461953" duration="7403000" />
     </task>
     <servers />
   </component>
@@ -188,42 +235,50 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="927" height="270" key="GridCell.Tab.0.bottom" timestamp="1589552057376">
+    <state x="740" y="260" key="FileChooserDialogImpl" timestamp="1589552409521">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="260" key="FileChooserDialogImpl/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589552409521" />
+    <state width="927" height="270" key="GridCell.Tab.0.bottom" timestamp="1589562226085">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="931" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1586987607568" />
-    <state width="927" height="270" key="GridCell.Tab.0.bottom/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589552057376" />
-    <state width="927" height="270" key="GridCell.Tab.0.center" timestamp="1589552057376">
+    <state width="927" height="270" key="GridCell.Tab.0.bottom/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589562226085" />
+    <state width="927" height="270" key="GridCell.Tab.0.center" timestamp="1589562226085">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="931" height="347" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1586987607568" />
-    <state width="927" height="270" key="GridCell.Tab.0.center/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589552057376" />
-    <state width="927" height="270" key="GridCell.Tab.0.left" timestamp="1589552057376">
+    <state width="927" height="270" key="GridCell.Tab.0.center/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589562226085" />
+    <state width="927" height="270" key="GridCell.Tab.0.left" timestamp="1589562226084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="931" height="347" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1586987607568" />
-    <state width="927" height="270" key="GridCell.Tab.0.left/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589552057376" />
-    <state width="927" height="270" key="GridCell.Tab.0.right" timestamp="1589552057376">
+    <state width="927" height="270" key="GridCell.Tab.0.left/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589562226084" />
+    <state width="927" height="270" key="GridCell.Tab.0.right" timestamp="1589562226085">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="931" height="347" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1586987607568" />
-    <state width="927" height="270" key="GridCell.Tab.0.right/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589552057376" />
-    <state width="931" height="347" key="GridCell.Tab.1.bottom" timestamp="1586987607568">
+    <state width="927" height="270" key="GridCell.Tab.0.right/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589562226085" />
+    <state width="931" height="331" key="GridCell.Tab.1.bottom" timestamp="1589555616039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="931" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1586987607568" />
-    <state width="931" height="347" key="GridCell.Tab.1.center" timestamp="1586987607568">
+    <state width="931" height="331" key="GridCell.Tab.1.bottom/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589555616039" />
+    <state width="931" height="331" key="GridCell.Tab.1.center" timestamp="1589555616039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="931" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1586987607568" />
-    <state width="931" height="347" key="GridCell.Tab.1.left" timestamp="1586987607568">
+    <state width="931" height="331" key="GridCell.Tab.1.center/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589555616039" />
+    <state width="931" height="331" key="GridCell.Tab.1.left" timestamp="1589555616039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="931" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1586987607568" />
-    <state width="931" height="347" key="GridCell.Tab.1.right" timestamp="1586987607568">
+    <state width="931" height="331" key="GridCell.Tab.1.left/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589555616039" />
+    <state width="931" height="331" key="GridCell.Tab.1.right" timestamp="1589555616039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="931" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1586987607568" />
+    <state width="931" height="331" key="GridCell.Tab.1.right/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589555616039" />
     <state x="2795" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1589551580687">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
@@ -231,6 +286,18 @@
     <state x="2795" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1588826331774" />
     <state x="2795" y="344" key="com.intellij.ide.util.TipDialog/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589551580687" />
     <state x="2795" y="344" key="com.intellij.ide.util.TipDialog/1920.0.2560.1040/0.0.1920.1040@1920.0.2560.1040" timestamp="1589319959693" />
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589552714607">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589552714607" />
+    <state x="656" y="118" width="607" height="804" key="find.popup" timestamp="1589554930841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="118" width="607" height="804" key="find.popup/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589554930841" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1589554937348">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/1920.0.2560.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589554937348" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -334,17 +401,21 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TccPlots$test.coverage" NAME="test Coverage Results" MODIFIED="1584713988571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TccPlots$graph.coverage" NAME="graph Coverage Results" MODIFIED="1584792724386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph_presentation" />
+    <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_togheter_linear_regression.coverage" NAME="layer_chart_plot_togheter_linear_regression Coverage Results" MODIFIED="1589558747455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_togheter_bezier_scipy.coverage" NAME="layer_chart_plot_togheter_bezier_scipy Coverage Results" MODIFIED="1584640256021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TccPlots$per_classification_chart_same_color.coverage" NAME="per_classification_chart_same_color Coverage Results" MODIFIED="1586967911103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_separated.coverage" NAME="layer_chart_plot_separated Coverage Results" MODIFIED="1586012323907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_togheter_bezier_gaussian_filter_no_alg.coverage" NAME="layer_chart_plot_togheter_bezier_gaussian_filter_no_alg Coverage Results" MODIFIED="1589552051081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_togheter_bezier_gaussian_filter.coverage" NAME="layer_chart_plot_togheter_bezier_gaussian_filter Coverage Results" MODIFIED="1589552057367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_togheter_svm__1_.coverage" NAME="layer_chart_plot_togheter_svm (1) Coverage Results" MODIFIED="1589561869839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/article" />
+    <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_togheter_bezier_gaussian_filter.coverage" NAME="layer_chart_plot_togheter_bezier_gaussian_filter Coverage Results" MODIFIED="1589555988058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_togheter_bezier.coverage" NAME="layer_chart_plot_togheter_bezier Coverage Results" MODIFIED="1584714104345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_togheter.coverage" NAME="layer_chart_plot_togheter Coverage Results" MODIFIED="1584730772523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TccPlots$per_classification_chart.coverage" NAME="per_classification_chart Coverage Results" MODIFIED="1586967923800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TccPlots$test.coverage" NAME="test Coverage Results" MODIFIED="1584713988571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TccPlots$fizzbuzz.coverage" NAME="fizzbuzz Coverage Results" MODIFIED="1586458259038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TccPlots$graph.coverage" NAME="graph Coverage Results" MODIFIED="1584792724386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph_presentation" />
+    <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_togheter_bezier_gaussian_filter__1_.coverage" NAME="layer_chart_plot_togheter_bezier_gaussian_filter (1) Coverage Results" MODIFIED="1589559277632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/article" />
+    <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_togheter_svm.coverage" NAME="layer_chart_plot_togheter_svm Coverage Results" MODIFIED="1589562226078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot.coverage" NAME="layer_chart_plot Coverage Results" MODIFIED="1584532153773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TccPlots$layer_chart_plot_togheter_bezier_scipy.coverage" NAME="layer_chart_plot_togheter_bezier_scipy Coverage Results" MODIFIED="1584640256021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TccPlots$per_classification_chart_same_color.coverage" NAME="per_classification_chart_same_color Coverage Results" MODIFIED="1586967911103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

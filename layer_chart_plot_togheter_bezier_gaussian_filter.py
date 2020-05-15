@@ -7,6 +7,7 @@ import np
 from scipy.ndimage import gaussian_filter1d
 import numpy as np
 import json
+import math
 
 Path = mpath.Path
 classes = ["Freerider", "Cold", "Warm", "Hot"]
@@ -36,6 +37,11 @@ def create_dir(dirName):
 def sortFirst(val):
     return val[0]
 
+def fixTimestamp(timestamp):
+    if (timestamp % 10 != 0):
+        return math.floor(timestamp / 10) * 10
+    return timestamp
+
 def drawLine(layer, peerClassifcations, log_index=-1):
     highest_y = 0
     for peerClassifcation in peerClassifcations:
@@ -49,13 +55,13 @@ def drawLine(layer, peerClassifcations, log_index=-1):
                     for el in datapoints:
                         if el["timestamp"] > 1600:
                             continue
-                        tuple_arr.append((el["timestamp"], el["nodeCount"]))
+                        tuple_arr.append((fixTimestamp(el["timestamp"]), el["nodeCount"]))
         else:
             datapoints = parsed_logs[log_index][layer][peerClassifcation]
             for el in datapoints:
                 if el["timestamp"] > 1600:
                     continue
-                tuple_arr.append((el["timestamp"], el["nodeCount"]))
+                tuple_arr.append((fixTimestamp(el["timestamp"]), el["nodeCount"]))
 
         if(len(tuple_arr) == 0):
             continue
