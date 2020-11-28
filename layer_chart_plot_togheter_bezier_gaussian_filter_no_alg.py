@@ -103,7 +103,7 @@ def drawLine(layer, peerClassifcations, log_index=-1):
         # ax.plot(x, y, 'x--', lw=2, color='black', ms=10)
         print(classesColors[peerClassifcation])
         # ax.plot([0.75], [0.25], "ro")
-        ax.scatter(x, y_orig, color=classesColors[peerClassifcation], s=1)
+        # ax.scatter(x, y_orig, color=classesColors[peerClassifcation], s=1)
         ax.plot(x, y, color=classesColors[peerClassifcation], label=peerClassifcation)
         ax.set_ylim(bottom=0, top=highest_y * 1.1)
         ax.set_xlim(right=1600)

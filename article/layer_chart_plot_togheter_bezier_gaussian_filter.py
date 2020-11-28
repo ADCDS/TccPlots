@@ -3,7 +3,6 @@ import os
 import matplotlib.pyplot as plt
 import matplotlib.path as mpath
 import matplotlib.patches as mpatches
-import np
 from scipy.ndimage import gaussian_filter1d
 import numpy as np
 import json
@@ -91,8 +90,11 @@ def drawLine(layer, peerClassifcations, log_index=-1):
         # ax.plot(x, y, 'x', lw=1, color=classesColors[peerClassifcation])
         print(classesColors[peerClassifcation])
         # ax.plot([0.75], [0.25], "ro")
-        ax.scatter(x, y_orig, color=classesColors[peerClassifcation], s=1)
-        ax.plot(x, y, color=classesColors[peerClassifcation], label=peerClassifcation)
+        # ax.scatter(x, y_orig, color=classesColors[peerClassifcation], s=1)
+        newLabel = peerClassifcation
+        if(newLabel == "Freerider"):
+            newLabel = "Free rider"
+        ax.plot(x, y, color=classesColors[peerClassifcation], label=newLabel)
         ax.set_ylim(bottom=0, top=highest_y * 1.1)
         ax.set_xlim(right=1600)
 
@@ -115,15 +117,16 @@ plt.show()
 fig, ax = plt.subplots()
 """
 
+matplotlib.rcParams.update({'font.size': 13.2})
 for layer in layers:
     drawLine(layer, classes, -1)
-    ax.set(xlabel='time (s)', ylabel='peer number', title=layer)
+    ax.set(xlabel='Time (s)', ylabel='Peer number')
     ax.grid()
     create_dir("output/2pc/together_gaussian/")
     if layer == "Layer 1" or layer == "Layer 4" or layer == "Layer 6" or layer == "Layer 5" or layer == "Unconnected nodes":
         plt.legend(loc="upper right")
     else:
         plt.legend(loc="upper left")
-    fig.savefig("output/2pc/together_gaussian/" + layer.lower().replace(" ", "_") + ".png")
+    fig.savefig("output/2pc/together_gaussian/" + layer.lower().replace(" ", "_") + ".png", bbox_inches='tight')
     plt.show()
     fig, ax = plt.subplots()
