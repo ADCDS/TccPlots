@@ -9,22 +9,35 @@ import json
 import math
 
 Path = mpath.Path
-classes = ["Freerider", "Cold", "Warm", "Hot"]
+classes = ["Free rider", "Cold", "Warm", "Hot"]
 classesColors = {
-    'Freerider': "black",
+    'Free rider': "black",
     'Cold': "blue",
     'Warm': "green",
     'Hot': "red"
 }
+classesMarkers = {
+    'Free rider': '',
+    'Cold': "s",
+    'Warm': "x",
+    'Hot': "o"
+}
 
-_2pclogs = os.listdir("./data/2pc")
+input_dir = "./data/multiple_k_split/"
+_2pclogs = os.listdir(input_dir)
 parsed_logs = []
+parsed_logs_name = []
 
 for i in _2pclogs:
     if(i[0] == "_"):
         continue
-    parsed_logs.append(json.load(open('./data/2pc/' + i)))
 
+    _2pclogsKs = os.listdir(input_dir + "/" + i)
+    for j in _2pclogsKs:
+        parsed_logs_name.append(i + "/" + j)
+        parsed_logs.append(json.load(open(input_dir + i + "/" + j + "/layer.pp.output.json")))
+
+# parsed_logs= [parsed_logs[1]]
 fig, ax = plt.subplots()
 
 def create_dir(dirName):
@@ -56,11 +69,12 @@ def drawLine(layer, peerClassifcations, log_index=-1):
                             continue
                         tuple_arr.append((fixTimestamp(el["timestamp"]), el["nodeCount"]))
         else:
-            datapoints = parsed_logs[log_index][layer][peerClassifcation]
-            for el in datapoints:
-                if el["timestamp"] > 1600:
-                    continue
-                tuple_arr.append((fixTimestamp(el["timestamp"]), el["nodeCount"]))
+            if layer in parsed_logs[log_index]:
+                datapoints = parsed_logs[log_index][layer][peerClassifcation]
+                for el in datapoints:
+                    if el["timestamp"] > 1600:
+                        continue
+                    tuple_arr.append((fixTimestamp(el["timestamp"]), el["nodeCount"]))
 
         if(len(tuple_arr) == 0):
             continue
@@ -69,7 +83,8 @@ def drawLine(layer, peerClassifcations, log_index=-1):
         x,y = zip(*tuple_arr)
         x = np.asarray(x)
         y_orig = np.asarray(y)
-        y = np.asarray(gaussian_filter1d(y_orig, 7))
+        y = np.asarray(gaussian_filter1d(y_orig, 5))
+        # y = y_orig
 
         if (x.size == 0 or y.size == 0 or int(x.max()) == 0 or int(y.max()) == 0):
             continue
@@ -91,7 +106,15 @@ def drawLine(layer, peerClassifcations, log_index=-1):
         print(classesColors[peerClassifcation])
         # ax.plot([0.75], [0.25], "ro")
         # ax.scatter(x, y_orig, color=classesColors[peerClassifcation], s=1)
-        ax.plot(x, y, color=classesColors[peerClassifcation], label=peerClassifcation)
+        newLabel = peerClassifcation
+        if(newLabel == "Freerider"):
+            newLabel = "Free rider"
+        # mec="black"
+        fillstyle = "none"
+        if(peerClassifcation == "Hot"):
+            fillstyle = "full"
+        #ax.plot(x, y, color=classesColors[peerClassifcation], label=newLabel, marker=classesMarkers[peerClassifcation], markevery=.1, fillstyle=fillstyle)
+        ax.plot(x, y, color=classesColors[peerClassifcation], label=newLabel)
         ax.set_ylim(bottom=0, top=highest_y * 1.1)
         ax.set_xlim(right=1600)
 
@@ -114,15 +137,22 @@ plt.show()
 fig, ax = plt.subplots()
 """
 
-for layer in layers:
-    drawLine(layer, classes, -1)
-    ax.set(xlabel='time (s)', ylabel='peer number', title=layer)
-    ax.grid()
-    create_dir("output/2pc/together_gaussian/")
-    if layer == "Layer 1" or layer == "Layer 4" or layer == "Layer 6" or layer == "Layer 5" or layer == "Unconnected nodes":
-        plt.legend(loc="upper right")
-    else:
-        plt.legend(loc="upper left")
-    fig.savefig("output/2pc/together_gaussian/" + layer.lower().replace(" ", "_") + ".png")
-    plt.show()
-    fig, ax = plt.subplots()
+matplotlib.rcParams.update({'font.size': 13.2})
+i = 0
+for parsed_log in parsed_logs:
+    for layer in layers:
+        drawLine(layer, classes, i)
+        ax.set(xlabel='Time (s)', ylabel='Peer number', title=parsed_logs_name[i].split('/')[1]  + " - " +layer)
+        ax.grid()
+        create_dir("output/multiple_k_split/gaussian/"+parsed_logs_name[i]+"/")
+        if layer == "Layer 1" or layer == "Layer 4" or layer == "Layer 6" or layer == "Layer 5" or layer == "Unconnected nodes":
+            plt.legend(loc="upper right")
+        else:
+            plt.legend(loc="upper left")
+        fig.savefig("output/multiple_k_split/gaussian/"+parsed_logs_name[i]+"/" + layer.lower().replace(" ", "_") + ".png", bbox_inches='tight')
+        plt.show()
+        fig, ax = plt.subplots()
+    i = i + 1
+
+
+

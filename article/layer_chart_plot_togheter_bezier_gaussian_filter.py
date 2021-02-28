@@ -16,15 +16,23 @@ classesColors = {
     'Warm': "green",
     'Hot': "red"
 }
+classesMarkers = {
+    'Freerider': '',
+    'Cold': "s",
+    'Warm': "x",
+    'Hot': "o"
+}
 
-_2pclogs = os.listdir("./data/2pc")
+input_dir = "./data/2pc/"
+_2pclogs = os.listdir(input_dir)
 parsed_logs = []
 
 for i in _2pclogs:
     if(i[0] == "_"):
         continue
-    parsed_logs.append(json.load(open('./data/2pc/' + i)))
+    parsed_logs.append(json.load(open(input_dir + i)))
 
+# parsed_logs= [parsed_logs[1]]
 fig, ax = plt.subplots()
 
 def create_dir(dirName):
@@ -69,7 +77,8 @@ def drawLine(layer, peerClassifcations, log_index=-1):
         x,y = zip(*tuple_arr)
         x = np.asarray(x)
         y_orig = np.asarray(y)
-        y = np.asarray(gaussian_filter1d(y_orig, 7))
+        y = np.asarray(gaussian_filter1d(y_orig, 5))
+        # y = y_orig
 
         if (x.size == 0 or y.size == 0 or int(x.max()) == 0 or int(y.max()) == 0):
             continue
@@ -94,7 +103,11 @@ def drawLine(layer, peerClassifcations, log_index=-1):
         newLabel = peerClassifcation
         if(newLabel == "Freerider"):
             newLabel = "Free rider"
-        ax.plot(x, y, color=classesColors[peerClassifcation], label=newLabel)
+        # mec="black"
+        fillstyle = "none"
+        if(peerClassifcation == "Hot"):
+            fillstyle = "full"
+        ax.plot(x, y, color=classesColors[peerClassifcation], label=newLabel, marker=classesMarkers[peerClassifcation], markevery=.1, fillstyle=fillstyle)
         ax.set_ylim(bottom=0, top=highest_y * 1.1)
         ax.set_xlim(right=1600)
 
@@ -120,7 +133,7 @@ fig, ax = plt.subplots()
 matplotlib.rcParams.update({'font.size': 13.2})
 for layer in layers:
     drawLine(layer, classes, -1)
-    ax.set(xlabel='Time (s)', ylabel='Peer number')
+    ax.set(xlabel='Time (s)', ylabel='Peer number', title=layer)
     ax.grid()
     create_dir("output/2pc/together_gaussian/")
     if layer == "Layer 1" or layer == "Layer 4" or layer == "Layer 6" or layer == "Layer 5" or layer == "Unconnected nodes":
