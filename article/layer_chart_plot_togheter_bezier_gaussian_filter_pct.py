@@ -7,6 +7,7 @@ from scipy.ndimage import gaussian_filter1d
 import numpy as np
 import json
 import math
+import shutil
 
 Path = mpath.Path
 classes = ["Freerider", "Cold", "Warm", "Hot"]
@@ -27,11 +28,12 @@ _2pclogs = os.listdir("./data/2pc_sbrc")
 parsed_logs = []
 
 for i in _2pclogs:
-    if(i[0] == "_"):
+    if (i[0] == "_"):
         continue
     parsed_logs.append(json.load(open('./data/2pc/' + i)))
 
 fig, ax = plt.subplots()
+
 
 def create_dir(dirName):
     try:
@@ -39,13 +41,17 @@ def create_dir(dirName):
     except FileExistsError:
         pass
 
+
 def sortFirst(val):
     return val[0]
 
+
 def fixTimestamp(timestamp):
-    if (timestamp % 10 != 0):
-        return math.floor(timestamp / 10) * 10
+    # if (timestamp % 10 != 0):
+    #     return math.floor(timestamp / 10) * 10
     return timestamp
+
+
 def howManyAt(peerClassifcation, time, log_index=-1):
     if (log_index == -1):
         raise ValueError('not implemented yet')
@@ -59,14 +65,25 @@ def howManyAt(peerClassifcation, time, log_index=-1):
                     ret += el["nodeCount"]
                     found = True
             # if(found == False):
-               # raise ValueError('no time ' + str(time))
+            # raise ValueError('no time ' + str(time))
         return ret
+
 
 def percentageOf(numberOfNodes, peerClassifcation, time, log_index=-1):
     total = howManyAt(peerClassifcation, time, log_index)
     if (total == 0):
         return 0
     return numberOfNodes * 100 / total
+
+
+def printVerts(layer, className, verts):
+    create_dir("output/2pc/together_gaussian_pct/2pc_sbrc/pct/" + layer)
+    f = open("output/2pc/together_gaussian_pct/2pc_sbrc/pct/" + layer + "/" + className + ".txt", "a")
+    for x in verts:
+        print(x)
+        f.write(str(x[0]) + " " + str(x[1]) + "\n")
+    f.close()
+
 
 def drawLinePct(layer, peerClassifcations, log_index=-1):
     highest_y = 0
@@ -89,19 +106,21 @@ def drawLinePct(layer, peerClassifcations, log_index=-1):
             for el in datapoints:
                 if el["timestamp"] > 1600:
                     continue
-                tuple_arr.append((fixTimestamp(el["timestamp"]), percentageOf(el["nodeCount"], peerClassifcation, el["timestamp"], log_index)))
+                tuple_arr.append((fixTimestamp(el["timestamp"]),
+                                  percentageOf(el["nodeCount"], peerClassifcation, el["timestamp"], log_index)))
                 # print("->at " + str(el["timestamp"]) + "s there is " + str(howManyAt("Hot", el["timestamp"], log_index)) + " " + peerClassifcation + " in the network")
                 # print("->at " + str(el["timestamp"]) + "s there is " + str(el["nodeCount"]) + " ("+str(percentageOf(el["nodeCount"], peerClassifcation, el["timestamp"], log_index))+") " + peerClassifcation + " in " + layer + "\n")
 
-        if(len(tuple_arr) == 0):
+        if (len(tuple_arr) == 0):
             continue
 
         tuple_arr.sort(key=sortFirst)
-        x,y = zip(*tuple_arr)
+        x, y = zip(*tuple_arr)
         x = np.asarray(x)
         y_orig = np.asarray(y)
         # y = y_orig
         y = np.asarray(gaussian_filter1d(y_orig, 7))
+        printVerts(layer, peerClassifcation, tuple_arr)
 
         if (x.size == 0 or y.size == 0 or int(x.max()) == 0 or int(y.max()) == 0):
             continue
@@ -138,6 +157,7 @@ def drawLinePct(layer, peerClassifcations, log_index=-1):
 
         print(verts)
 
+
 """layers = set()
 for parsed_log in parsed_logs:
     for k in parsed_log.keys():
@@ -154,6 +174,11 @@ plt.show()
 fig, ax = plt.subplots()
 """
 
+try:
+    shutil.rmtree("output/2pc/together_gaussian_pct/2pc_sbrc/pct/")
+except:
+    print("")
+
 for layer in layers:
     drawLinePct(layer, classes, -1)
 
@@ -161,9 +186,8 @@ for layer in layers:
         # ax.set(xlabel='tempo (s)', ylabel='Número de peers', title="Número de peers desconectados por tempo")
         ax.set(xlabel='Time (s)', ylabel='Percentage of disconnected peers per class', title='k=1 - ' + layer)
     else:
-        #ax.set(xlabel='tempo (s)', ylabel='Número de peers', title=layer)
+        # ax.set(xlabel='tempo (s)', ylabel='Número de peers', title=layer)
         ax.set(xlabel='Time (s)', ylabel='Percentage of peers per class', title='k=1 - ' + layer)
-
 
     ax.grid()
     create_dir("output/2pc/together_gaussian_pct/2pc_sbrc/")
@@ -196,5 +220,3 @@ for layer in layers:
     #     plt.show()
     #     fig, ax = plt.subplots()
     #     break
-
-

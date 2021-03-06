@@ -7,6 +7,7 @@ from scipy.ndimage import gaussian_filter1d
 import numpy as np
 import json
 import math
+import shutil
 
 Path = mpath.Path
 classes = ["Free rider", "Cold", "Warm", "Hot"]
@@ -27,7 +28,7 @@ input_dir = "./data/multiple_k_split/"
 _2pclogs = os.listdir(input_dir)
 parsed_logs = []
 parsed_logs_name = []
-k_str = 'k=15'
+k_str = 'k=7'
 
 for i in _2pclogs:
     if (i[0] == "_"):
@@ -74,6 +75,14 @@ def percentageOf(numberOfNodes, peerClassifcation, time, log_index=-1):
         return 0
     return numberOfNodes * 100 / total
 
+def printVerts(layer, className, verts):
+    create_dir("output/multiple_k_togheter/data/pct/" + k_str + "/" + layer)
+    f = open("output/multiple_k_togheter/data/pct/" + k_str + "/" + layer + "/" + className + ".txt", "a")
+    for x in verts:
+        print(x)
+        f.write(str(x[0]) + " " + str(x[1]) + "\n")
+    f.close()
+
 def drawLinePct(layer, peerClassifcations, log_index=-1):
     highest_y = 0
     for peerClassifcation in peerClassifcations:
@@ -108,6 +117,7 @@ def drawLinePct(layer, peerClassifcations, log_index=-1):
         y_orig = np.asarray(y)
         # y = y_orig
         y = np.asarray(gaussian_filter1d(y_orig, 7))
+        printVerts(layer, peerClassifcation, tuple_arr)
 
         if (x.size == 0 or y.size == 0 or int(x.max()) == 0 or int(y.max()) == 0):
             continue
@@ -160,6 +170,10 @@ plt.show()
 fig, ax = plt.subplots()
 """
 
+try:
+    shutil.rmtree("output/multiple_k_togheter/data/pct/" + k_str)
+except:
+    print("")
 for layer in layers:
     k = parsed_logs_name[0].split('/')[1]
 

@@ -7,6 +7,7 @@ from scipy.ndimage import gaussian_filter1d
 import numpy as np
 import json
 import math
+import shutil
 
 Path = mpath.Path
 classes = ["Free rider", "Cold", "Warm", "Hot"]
@@ -33,8 +34,8 @@ for i in _2pclogs:
     if (i[0] == "_"):
         continue
 
-    parsed_logs_name.append(i + "/"+k_str+"/")
-    parsed_logs.append(json.load(open(input_dir + i + "/"+k_str+"/layer.pp.output.json")))
+    parsed_logs_name.append(i + "/" + k_str + "/")
+    parsed_logs.append(json.load(open(input_dir + i + "/" + k_str + "/layer.pp.output.json")))
 
 # parsed_logs= [parsed_logs[1]]
 fig, ax = plt.subplots()
@@ -52,8 +53,8 @@ def sortFirst(val):
 
 
 def fixTimestamp(timestamp):
-    if (timestamp % 10 != 0):
-        return math.floor(timestamp / 10) * 10
+    # if (timestamp % 10 != 0):
+    #     return math.floor(timestamp / 10) * 10
     return timestamp
 
 
@@ -88,6 +89,7 @@ def drawLine(layer, peerClassifcations, log_index=-1):
         y_orig = np.asarray(y)
         y = np.asarray(gaussian_filter1d(y_orig, 5))
         # y = y_orig
+        printVerts(layer, peerClassifcation, tuple_arr)
 
         if (x.size == 0 or y.size == 0 or int(x.max()) == 0 or int(y.max()) == 0):
             continue
@@ -141,6 +143,15 @@ def drawLine(layer, peerClassifcations, log_index=-1):
         print(verts)
 
 
+def printVerts(layer, className, verts):
+    create_dir("output/multiple_k_togheter/data/raw/" + k_str + "/" + layer)
+    f = open("output/multiple_k_togheter/data/raw/" + k_str + "/" + layer + "/" + className + ".txt", "a")
+    for x in verts:
+        print(x)
+        f.write(str(x[0]) + " " + str(x[1]) + "\n")
+    f.close()
+
+
 layers = set()
 for parsed_log in parsed_logs:
     for k in parsed_log.keys():
@@ -157,6 +168,11 @@ fig, ax = plt.subplots()
 """
 
 matplotlib.rcParams.update({'font.size': 13.2})
+
+try:
+    shutil.rmtree("output/multiple_k_togheter/data/raw/" + k_str)
+except:
+    print("")
 
 for layer in layers:
     drawLine(layer, classes, -1)

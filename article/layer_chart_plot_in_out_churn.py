@@ -3,7 +3,6 @@ import os
 import matplotlib.pyplot as plt
 import matplotlib.path as mpath
 import matplotlib.patches as mpatches
-import np
 from scipy.ndimage import gaussian_filter1d
 import numpy as np
 import json
@@ -120,7 +119,19 @@ def drawLine(log_index=-1, scatter=False):
                                os.O_RDWR | os.O_CREAT);
             for i in range(len(verts)):
                 os.write(txt_file, bytes(
-                    str(verts[i][0]) + " " + str(verts[i][1]) + "\n", encoding="utf8"))  # works with any number of elements in a line
+                    str(verts[i][0]) + " " + str(verts[i][1]) + "\n",
+                    encoding="utf8"))  # works with any number of elements in a line
+        else:
+            try:
+                os.remove("output/2pc/peer_churn_ip_port/experiment_all.txt")
+            except:
+                pass
+            txt_file = os.open("./output/2pc/peer_churn_ip_port/experiment_all " + type + ".txt",
+                               os.O_RDWR | os.O_CREAT);
+            for i in range(len(verts)):
+                os.write(txt_file, bytes(
+                    str(verts[i][0]) + " " + str(verts[i][1]) + "\n",
+                    encoding="utf8"))  # works with any number of elements in a line
 
 
 for i in range(len(parsed_logs)):
