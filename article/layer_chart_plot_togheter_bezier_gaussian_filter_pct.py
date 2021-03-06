@@ -23,7 +23,7 @@ classesMarkers = {
     'Hot': "o"
 }
 
-_2pclogs = os.listdir("./data/2pc")
+_2pclogs = os.listdir("./data/2pc_sbrc")
 parsed_logs = []
 
 for i in _2pclogs:
@@ -143,7 +143,7 @@ for parsed_log in parsed_logs:
     for k in parsed_log.keys():
         layers.add(k)
 """
-layers = ["Layer 1", "Layer 2", "Layer 3", "Layer 4", "Layer 5"]
+layers = ["Layer 1", "Layer 2", "Layer 3", "Layer 4", "Layer 5", "Layer 6"]
 """
 drawLinePct("Layer 1", ["Warm", "Hot"], 1)
 ax.set(xlabel='time (s)', ylabel='peer number', title="Layer 1")
@@ -166,12 +166,13 @@ for layer in layers:
 
 
     ax.grid()
-    create_dir("output/2pc/together_gaussian_pct/")
+    create_dir("output/2pc/together_gaussian_pct/2pc_sbrc/")
+    create_dir("output/2pc/together_gaussian_pct/2pc_sbrc/data/")
     if layer == "Layer 1" or layer == "Layer 4" or layer == "Layer 6" or layer == "Layer 5" or layer == "Unconnected nodes":
         plt.legend(loc="upper right")
     else:
         plt.legend(loc="upper left")
-    fig.savefig("output/2pc/together_gaussian_pct/" + layer.lower().replace(" ", "_") + ".png")
+    fig.savefig("output/2pc/together_gaussian_pct/2pc_sbrc/" + layer.lower().replace(" ", "_") + ".png")
     plt.show()
     fig, ax = plt.subplots()
 
