@@ -7,6 +7,7 @@ from scipy.ndimage import gaussian_filter1d
 import numpy as np
 import json
 import math
+import shutil
 
 Path = mpath.Path
 classes = ["Freerider", "Cold", "Warm", "Hot"]
@@ -45,9 +46,17 @@ def sortFirst(val):
     return val[0]
 
 def fixTimestamp(timestamp):
-    if (timestamp % 10 != 0):
-        return math.floor(timestamp / 10) * 10
+    # if (timestamp % 10 != 0):
+    #     return math.floor(timestamp / 10) * 10
     return timestamp
+
+def printVerts(layer, className, verts):
+    create_dir("output/2pc/together_gaussian/no_pct/data/" + layer)
+    f = open("output/2pc/together_gaussian/no_pct/data/" + layer + "/" + className + ".txt", "a")
+    for x in verts:
+        print(x)
+        f.write(str(x[0]) + " " + str(x[1]) + "\n")
+    f.close()
 
 def drawLine(layer, peerClassifcations, log_index=-1):
     highest_y = 0
@@ -79,6 +88,7 @@ def drawLine(layer, peerClassifcations, log_index=-1):
         y_orig = np.asarray(y)
         y = np.asarray(gaussian_filter1d(y_orig, 5))
         # y = y_orig
+        printVerts(layer, peerClassifcation, tuple_arr)
 
         if (x.size == 0 or y.size == 0 or int(x.max()) == 0 or int(y.max()) == 0):
             continue
@@ -130,16 +140,20 @@ plt.show()
 fig, ax = plt.subplots()
 """
 
+try:
+    shutil.rmtree("output/2pc/together_gaussian/no_pct/")
+except:
+    print("")
 matplotlib.rcParams.update({'font.size': 13.2})
 for layer in layers:
     drawLine(layer, classes, -1)
     ax.set(xlabel='Time (s)', ylabel='Peer number', title=layer)
     ax.grid()
-    create_dir("output/2pc/together_gaussian/")
+    create_dir("output/2pc/together_gaussian/no_pct/")
     if layer == "Layer 1" or layer == "Layer 4" or layer == "Layer 6" or layer == "Layer 5" or layer == "Unconnected nodes":
         plt.legend(loc="upper right")
     else:
         plt.legend(loc="upper left")
-    fig.savefig("output/2pc/together_gaussian/" + layer.lower().replace(" ", "_") + ".png", bbox_inches='tight')
+    fig.savefig("output/2pc/together_gaussian/no_pct/" + layer.lower().replace(" ", "_") + ".png", bbox_inches='tight')
     plt.show()
     fig, ax = plt.subplots()

@@ -144,8 +144,8 @@ def drawLine(layer, peerClassifcations, log_index=-1):
 
 
 def printVerts(layer, className, verts):
-    create_dir("output/multiple_k_togheter/data/raw/" + k_str + "/" + layer)
-    f = open("output/multiple_k_togheter/data/raw/" + k_str + "/" + layer + "/" + className + ".txt", "a")
+    create_dir("output/multiple_k_togheter/data/nao_pct/" + k_str + "/" + layer)
+    f = open("output/multiple_k_togheter/data/nao_pct/" + k_str + "/" + layer + "/" + className + ".txt", "a")
     for x in verts:
         print(x)
         f.write(str(x[0]) + " " + str(x[1]) + "\n")

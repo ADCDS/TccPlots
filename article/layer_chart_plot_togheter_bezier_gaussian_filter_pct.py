@@ -24,7 +24,7 @@ classesMarkers = {
     'Hot': "o"
 }
 
-_2pclogs = os.listdir("./data/2pc_sbrc")
+_2pclogs = os.listdir("./data/2pc")
 parsed_logs = []
 
 for i in _2pclogs:
@@ -96,16 +96,16 @@ def drawLinePct(layer, peerClassifcations, log_index=-1):
                 if layer in parsed_log:
                     datapoints = parsed_log[layer][peerClassifcation]
                     for el in datapoints:
-                        if el["timestamp"] > 1600:
-                            continue
+                        # if el["timestamp"] > 1600:
+                        #     continue
                         # tuple_arr.append((fixTimestamp(el["timestamp"]), el["nodeCount"]))
                         tuple_arr.append((fixTimestamp(el["timestamp"]),
                                           percentageOf(el["nodeCount"], peerClassifcation, el["timestamp"], idx)))
         else:
             datapoints = parsed_logs[log_index][layer][peerClassifcation]
             for el in datapoints:
-                if el["timestamp"] > 1600:
-                    continue
+                # if el["timestamp"] > 1600:
+                #     continue
                 tuple_arr.append((fixTimestamp(el["timestamp"]),
                                   percentageOf(el["nodeCount"], peerClassifcation, el["timestamp"], log_index)))
                 # print("->at " + str(el["timestamp"]) + "s there is " + str(howManyAt("Hot", el["timestamp"], log_index)) + " " + peerClassifcation + " in the network")
@@ -153,7 +153,7 @@ def drawLinePct(layer, peerClassifcations, log_index=-1):
                 markevery=.1, fillstyle=fillstyle)
 
         ax.set_ylim(bottom=0, top=100)
-        ax.set_xlim(right=1600)
+        # ax.set_xlim(right=1600)
 
         print(verts)
 
